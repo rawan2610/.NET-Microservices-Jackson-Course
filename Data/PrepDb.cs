@@ -1,4 +1,8 @@
 //rawan
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using System.Linq;
+using PlatformService.Models;
 namespace PlatformService.Data
 {
     public static class PrepDb
@@ -22,30 +26,27 @@ namespace PlatformService.Data
                         Name="Dot Net",
                         Publisher="Microsoft",
                         Cost="Free"
-                    }
-
-
-
-new Platform()
+                    },
+                    new Platform()
                     {
-                        Name="SQL Server Express", Publisher="Microsoft", Cost="Free"
-                 
-
-                    }
-new Platform()
+                        Name="SQL Server Express",
+                        Publisher="Microsoft",
+                        Cost="Free"
+                    },
+                    new Platform()
                     {
-                       Name="Kubernetes", Publisher="Cloud Native Computing Foundation", Cost="Free"
+                        Name="Kubernetes",
+                        Publisher="Cloud Native Computing Foundation",
+                        Cost="Free"
                     }
-
                 );
                 context.SaveChanges();
-
             }
             else
             {
-                Console.Writeline("--> we already have data");
+                Console.WriteLine("--> we already have data");
             }
-
         }
     }
 }
+//https://github.com/rawan2610/.NET-Microservices-Jackson-Course.git
