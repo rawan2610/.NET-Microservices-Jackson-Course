@@ -1,24 +1,10 @@
-
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-
-
-//builder.Services.AddOpenApi();
+var startup = new PlatformService.Startup(builder.Configuration);
+startup.ConfigureServices(builder.Services);
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-/*if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}*/
-
-app.UseHttpsRedirection();
-
-
+startup.Configure(app, app.Environment);
 
 app.Run();
-
-

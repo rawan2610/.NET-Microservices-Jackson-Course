@@ -1,4 +1,4 @@
-namspace PlatformService.Dtos
+namespace PlatformService.Dtos
 
 {
     //this is the data the user will see
@@ -9,10 +9,8 @@ namspace PlatformService.Dtos
         
         public string Name { get; set; } =string.Empty;
         
-        
         public string? Publisher { get; set; }
 
-        
         public string? Cost { get; set; }
     }
 
