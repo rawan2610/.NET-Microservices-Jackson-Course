@@ -13,7 +13,7 @@ namespace PlatformService.Profiles
             //and we can do implicit mapping too
 
             CreateMap<Platform, PlatformReadDto>();
-            CreateMap<PlatformReadDto, Platform>();
+            CreateMap<PlatformCreateDto, Platform>();
 
 
         }
